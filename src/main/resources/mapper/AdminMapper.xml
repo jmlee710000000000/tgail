@@ -1,0 +1,97 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.study.home.mapper.AdminMapper">
+<insert id="shipEnroll">
+
+		<selectKey resultType="int" keyProperty="shipId" order="AFTER">
+  		
+  			SELECT LAST_INSERT_ID()
+  		
+  		</selectKey>
+  	
+  		insert into shipTBL(shipName, shipPrice, shipStock, shipIntro)
+		values(#{shipName},#{shipPrice},#{shipStock},#{shipIntro})
+
+  	</insert>
+<!--   상품 리스트  -->
+   <select id="goodsGetList" resultType="org.study.home.model.ShipDTO">
+   
+      select  shipId,shipName, shipStock, a.regDate
+      from shipTBL a 
+      <if test="keyword != null">
+         where (shipName like concat ('%', #{keyword}, '%'))
+      </if>
+      order by shipId desc 
+      limit #{skip}, #{amount}      
+   
+   </select>
+   
+   
+<!--    상품 총 갯수 -->
+     <select id="goodsGetTotal" resultType="int">
+     
+        select count(*) from shipTBL
+        
+        <if test="keyword != null">
+        
+           where shipName like concat('%' , #{keyword}, '%')
+        
+        </if>
+     
+     </select>
+     
+     <!-- 이미지 등록 -->
+	<insert id="imageEnroll">
+	
+		insert into ship_image(shipId, fileName, uploadPath, uuid) values (#{shipId}, #{fileName}, #{uploadPath}, #{uuid})
+	
+	</insert>
+	
+	
+	 <select id="goodsRead" resultType="org.study.home.model.ShipDTO">
+      SELECT * FROM shipTBL WHERE shipId = #{shipId}
+   </select>
+
+
+   <update id="goodsUpdate">
+
+		UPDATE shipTBL SET shipName = #{shipName},shipPrice
+		= #{shipPrice},shipStock = #{shipStock},shipIntro =
+		#{shipIntro} WHERE shipId = #{shipId}
+	</update>
+	
+	
+	<!-- 상품 조회 페이지 -->
+	<select id="goodsGetDetail" resultType="org.study.home.model.ShipDTO">
+	
+		select shipId, shipName,shipPrice, shipStock, shipIntro, regDate, updateDate 
+		from shipTBL where shipId = #{shipId0}
+	
+	</select>
+	<update id="goodsModify">
+		
+		update shipTBL set shipName = #{shipName},	shipPrice = #{shipPrice}, shipStock = #{shipStock}, 
+		shipIntro = #{shipIntro},updateDate = now()
+		where shipId = ${shipId}
+		
+	</update>
+	<!-- 상품 정보 삭제 -->
+	<delete id="goodsDelete">
+	
+		delete from shipTBL where shipId = #{shipId}
+	
+	</delete>
+	<!-- 지정 상품 이미지 전체 삭제 --> 
+	<delete id="deleteImageAll">
+	
+		delete FROM ship_image where shipId = #{shipId}
+	
+	</delete>
+<!-- 지정 상품 이미지 정보 얻기 -->
+	<select id="getAttachInfo" resultType="org.study.home.model.AttachImageDTO">
+	
+		select * from ship_image where shipId = #{shipId}
+	
+	</select>
+  </mapper>

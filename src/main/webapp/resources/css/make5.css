@@ -1,0 +1,393 @@
+.header{
+    justify-content:space-around;
+    width: 100%;
+    margin-top:10px;
+    display: flex;
+   color: white;
+
+ 
+}
+.Logo{
+	text-decoration:none;
+	color:white;
+}
+h1{
+	margin-left:30px;
+	margin-top:17px;
+	margin-bottom:0;
+    text-align: center;
+    color: white;
+}
+
+
+.a1{
+   align-items: center;
+    text-align: center;
+  
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    padding-bottom: 20px;
+    padding-top: 29px;
+    text-align: center;
+    margin: 0px ;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+
+    
+   
+   
+}
+
+.a1:hover{
+	align-items: center;
+    text-align: center;
+  
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    padding-bottom: 20px;
+    padding-top: 29px;
+    text-align: center;
+    margin: 0px ;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: #03e9f4;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+
+}
+
+.lightOna1{
+   align-items: center;
+    text-align: center;
+  
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    padding-bottom: 20px;
+    padding-top: 29px;
+    text-align: center;
+    margin: 0px ;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+
+    background: #03e9f4;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+   
+}
+
+.lightOna1:hover{
+   align-items: center;
+    text-align: center;
+  
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    padding-bottom: 20px;
+    padding-top: 29px;
+    text-align: center;
+    margin: 0px ;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+
+     background: #03e9f4;
+      box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+}
+
+/*.a1은 메뉴버튼들 장식*/
+.a1 span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+.a1 span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+.a1 span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+.a1 span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+
+/*로그인버튼 장식*/
+
+
+
+.frame-btn {
+
+  line-height: 35px;
+  display: inline-block;
+  padding: 25px 30px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  position: relative;
+}
+.frame-btn__text {
+  color: #00ffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 300ms ease;
+  position: relative;
+}
+.frame-btn:hover .frame-btn__text {
+  color: white;
+}
+.frame-btn__solid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  background-color: #00ffff;
+  width: calc(100% - (5px * 4));
+  height: calc(100% - (5px * 4));
+  transform-origin: 50%;
+  transform: scale(0.85);
+  opacity: 0;
+  transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.frame-btn:hover .frame-btn__solid {
+  opacity: 1;
+  transform: scale(1);
+}
+.frame-btn__outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.frame-btn__outline--tall {
+  margin: 0 5px;
+  width: calc(100% - (5px * 2));
+  height: 100%;
+}
+.frame-btn__outline--flat {
+  margin: 5px 0;
+  height: calc(100% - (5px * 2));
+  width: 100%;
+}
+.frame-btn__line {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.frame-btn__line--tall:before, .frame-btn__line--tall:after {
+  height: 100%;
+  width: 1px;
+  top: 0;
+}
+.frame-btn:hover .frame-btn__outline--flat .frame-btn__line--tall:before, .frame-btn:hover .frame-btn__outline--flat .frame-btn__line--tall:after {
+  transform: scaleY(0);
+}
+.frame-btn:hover .frame-btn__outline--tall .frame-btn__line--tall:before, .frame-btn:hover .frame-btn__outline--tall .frame-btn__line--tall:after {
+  margin: 5px 0;
+  height: calc(100% - (5px * 2));
+}
+.frame-btn__line--tall:before {
+  left: 0;
+}
+.frame-btn__line--tall:after {
+  right: 0;
+}
+.frame-btn__line--flat:before, .frame-btn__line--flat:after {
+  width: 100%;
+  height: 1px;
+  left: 0;
+}
+.frame-btn:hover .frame-btn__outline--tall .frame-btn__line--flat:before, .frame-btn:hover .frame-btn__outline--tall .frame-btn__line--flat:after {
+  transform: scaleX(0);
+}
+.frame-btn:hover .frame-btn__outline--flat .frame-btn__line--flat:before, .frame-btn:hover .frame-btn__outline--flat .frame-btn__line--flat:after {
+  margin: 0 5px;
+  width: calc(100% - (5px * 2));
+}
+.frame-btn__line--flat:before {
+  top: 0;
+}
+.frame-btn__line--flat:after {
+  bottom: 0;
+}
+.frame-btn__line:before, .frame-btn__line:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #00ffff;
+  transition: 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.frame-btn:hover .frame-btn__line:before, .frame-btn:hover .frame-btn__line:after {
+  transition: 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+
+.login{
+   
+   width: 85px;
+   height: 40px;
+   margin-top: 28px;
+   right: 100px;
+   margin-right: 6%;
+   margin-left: 1%;
+}
+body{
+	margin: 0;
+    padding: 0;
+    background-color:black;
+}
+.footer{
+    color: white;
+    text-align: center;
+}
+.footer2{
+    color: white;
+    text-align: center;
+    font-size: small;
+    font-style: italic;
+}
+.Putin{
+    width: 50%;
+    margin-left: 26%;
+}
+.spaceX{
+    width: 20%;
+    margin-right: 5%;
+    border-radius: 30%;
+}
+
+.ship{
+    margin-left: 25%;
+    margin-top: 100px;
+    border-radius: 30% ;
+}
+.mainVideo{
+    margin-top: 10px;
+  
+}
+.video3{
+    margin-top: 20px;
+    margin-left: 10%;
+    width: 80%;
+}
+.video4{
+
+    margin-top: 20px;
+    margin-left: 25%;
+    width: 50%; 
+}
+.stupid{
+    font-style: italic;
+    margin-top: 150px;
+}
+.stupid2{
+    font-style: italic;
+    margin-top: 150px;
+    margin-bottom: 150px;
+   
+   
+}
+.CEO{
+    border: 1px solid white;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.CEO:hover{
+    background-color:white; 
+    color:  black;
+ 
+
+    transition: width 1000ms ease-in, background-color 1000ms ease-in;
+    
+}
+.video4:hover{
+    background-color:white; 
+    color:  black;
+ 
+
+    transition: width 1000ms ease-in, background-color 1000ms ease-in;
+}

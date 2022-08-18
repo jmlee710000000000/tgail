@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.study.home.mapper.CartMapper">
+		<!-- 카트 추가 -->
+	<insert id="addCart">
+	
+		insert into ship_cart(user_id, shipId, shipCount)
+		values(#{user_id}, #{shipId}, #{shipCount}) 
+	
+	</insert>
+	
+	
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart">
+	
+		delete from ship_cart where cartId = #{cartId}
+	
+	</delete>
+	
+	<!-- 카트 수량 수정 -->
+	<update id="modifyCount">
+	
+		update ship_cart set shipCount=#{shipCount} where cartId = #{cartId}
+	
+	</update>
+	
+	
+	<!-- 카트 목록 -->
+	<select id="getCart" resultType="org.study.home.model.CartDTO">
+	
+		select a.cartId, a.user_id, a.shipId, a.shipCount, b.shipName, b.shipPrice
+		from ship_cart a left outer join shipTBL b on a.shipId = b.shipId
+		where user_id = #{user_id}	
+	
+	</select>
+	
+	<!-- 카트 확인 -->
+	<select id="checkCart" resultType="org.study.home.model.CartDTO">
+	
+		select * from ship_cart 
+		where user_id = #{user_id} and shipId = #{shipId}
+	
+	</select>
+	
+	
+  </mapper>

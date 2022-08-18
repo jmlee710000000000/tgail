@@ -1,0 +1,357 @@
+th{
+	color:white;
+	text-decoration: none;
+		font-family: 'Song Myung', serif;
+}
+a{
+	text-decoration: none;
+		font-family: 'Song Myung', serif;
+}
+.headText{
+	font-family: 'Song Myung', serif;
+	width: 250px;
+	display: flex;
+	justify-content: center;
+	margin-left: 41%;
+}
+tr{
+	border: 1px solid black;
+}
+table{
+	display: flex;
+	justify-content: center;
+}
+body{
+	display: flex;
+	justify-content: center;
+}
+.Page{	
+	width: 70%;
+}
+.mainPage{
+	border: 1px solid black;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+:root {
+  --primary: red;
+  --secondary: blue;
+  --s-1: #9170fc;
+  --s-2: #00fcd2;
+  --s-3: #fdef92;
+  --s-4: #f07aa0;
+}
+/* 로그인버튼 크기조작은 back으로 */
+
+.back2 {
+	position:fixed;
+	margin-top:190px;
+	margin-left:100px;
+	border-radius: 10px;
+	width: 200px;
+	height:70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5em;
+  font-size: 2em;
+  background: linear-gradient(123deg, black 0%, #042D64) no-repeat top left/150%;
+}
+
+.mainBtn2 {
+	margin-left:200px;
+	margin-top:-80px;
+	position:absolute;
+	padding: 0;
+	overflow: visible;
+	background: none;
+	border: none;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
+
+.btn3 {
+	padding-top:15px;
+	padding-left:0px;
+	font-family: 'Song Myung', serif;
+	border-radius: 10px;
+	width: 200px;
+	height:  500px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: url(https://api.thumbr.io/whitenoise-361x370.png?background=00000000&noise=000000f&density=50&opacity=40) repeat top left/1.25em, url(https://www.transparenttextures.com/patterns/green-dust-and-scratches.png) no-repeat center/100%;
+  /* font-family: "Space Mono", monospace; */
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 0.025em currentColor;
+  text-shadow: 0.05em 0.075em 0.075em rgba(255, 255, 255, 0.8), 0.05em 0.075em 1em rgba(255, 255, 255, 0.5), -0.04em -0.04em 0.05em rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0.1em 0.1em 0.075em rgba(255, 255, 255, 0.666), inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.25), inset 0 0 0.4em rgba(255, 255, 255, 0.25);
+  transition: 0.5s;
+  will-change: filter;
+}
+
+
+
+
+
+.btn3:before {
+  content: "";
+  z-index: -1;
+  mix-blend-mode: color;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.btn3:after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  width: 200%;
+  left: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 10%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9), transparent 20%, transparent 30%, white, rgba(255, 255, 255, 0.75), transparent 70%, transparent, white, rgba(255, 255, 255, 0.75), transparent);
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+  transform: translate3d(-50%, 0, 0);
+  transition: 0.4s;
+}
+.btn3:hover:after, .btn3:focus:after {
+  transform: translate3d(0%, 0, 0) scale3d(1.5, 1.2, 1);
+}
+
+.btn--plain {
+  background: white;
+  -webkit-text-stroke: initial;
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+}
+.btn--plain:hover, .btn--plain:focus {
+  background: #cccccc;
+}
+.btn--plain:before, .btn--plain:after {
+  content: none;
+}
+
+.btn--3:before {
+  height: 200%;
+  width: 200%;
+  left: -30%;
+  bottom: 0;
+  background-image: repeating-linear-gradient(22deg, var(--s-1) 20%, transparent 40%, var(--s-1) 60%), linear-gradient(-60deg, var(--s-1), var(--s-2), white 10%, var(--s-3), var(--s-2) 40%, var(--s-4), var(--s-1) 50%, white 60%, var(--s-3), var(--s-4), var(--s-2), var(--s-1));
+  background-size: 50% 100%;
+  background-repeat: repeat;
+  filter: url("data:image/svg+xml;utf8,\a<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\a<defs>\a<filter id='filter' x='-20%' y='-20%' width='140%' height='140%' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'><feTurbulence type='turbulence' baseFrequency='0.02 0.03' numOctaves='1' seed='13' stitchTiles='stitch' x='0%' y='0%' width='100%' height='100%' result='turbulence'/><feDisplacementMap in='SourceGraphic' in2='turbulence' scale='126' xChannelSelector='R' yChannelSelector='B' x='0%' y='0%' width='100%' height='100%' result='displacementMap2'/></filter>\a</defs>\a</svg>\a#filter\a") contrast(1.3);
+}
+.btn--3:hover:before, .btn--3:focus:before {
+  background-position: -50%, 100%;
+}
+
+
+
+body {
+    background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+}
+
+
+.neon_effect p {
+  text-align: center;
+  font-size: 1em;
+  margin: 20px;
+  transition: all 0.4s;
+}
+.neon_effect p:nth-child(1){
+  color: #fff;
+   font-family: Comfortaa;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(2){
+  color: #fff;
+  font-family: Lobster;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(3){
+  color: #fff;
+  font-family: Abril Fatface;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(4){
+  color: #fff;
+  font-family: Comfortaa;
+  font-weight: 700;
+  animation: neon4 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(5){
+  color: #fff;
+  font-family: 'Do Hyeon';
+  font-weight: bold;
+  animation: neon5 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(6){
+  color: #fff;
+  font-family: 'Notable', sans-serif;
+  font-weight: bold;
+  animation: neon6 1.5s ease-in-out infinite alternate;
+}
+
+
+
+.neon_effect .p1:first-child{
+  color: #fff;
+  font-family: Abril Fatface;
+  animation: neon7 1.5s ease-in-out infinite alternate;
+}
+.neon_effect .pGold:first-child{
+  color: #fff;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+.neon_effect .exitBtn:first-child{
+  color: #fff;
+ font-family: 'Song Myung', serif;
+  font-weight: bold;
+  font-size:2em;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+.exitBtnBox{
+	margin-top:700px;
+	margin-left:70%;
+	position:fixed;
+	width: 250px;
+	
+}
+.neon_effect .pBlue:first-child{
+	 font-family: Comfortaa;
+  color: #fff;
+   animation: neon2 1.5s ease-in-out infinite alternate;
+}
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@keyframes neon3 {
+   from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+@keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+@keyframes neon7 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px red, 0 0 35px red, 0 0 40px red, 0 0 50px red, 0 0 75px red;
+  }
+}
+
+@keyframes neon8{
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px aqua, 0 0 70px aqua, 0 0 80px aqua, 0 0 100px aqua, 0 0 150px aqua;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px aqua, 0 0 35px aqua, 0 0 40px aqua, 0 0 50px aqua, 0 0 75px aqua;
+  }
+}
+/* @keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@keyframes neon3 {
+   from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+@keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+} */

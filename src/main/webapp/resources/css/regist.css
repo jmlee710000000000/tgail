@@ -1,0 +1,635 @@
+
+
+.sujungBtn{
+	margin-top: 10px;
+	
+}
+
+.frame-btn2 {
+  line-height: 35px;
+  display: inline-block;
+  padding: 25px 30px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  position: relative;
+  width: 370px
+}
+.frame-btn2__text {
+  color: #00ffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 300ms ease;
+  position: relative;
+}
+.frame-btn2:hover .frame-btn2__text {
+  color: white;
+}
+.frame-btn2__solid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  background-color: #00ffff;
+  width: calc(100% - (5px * 4));
+  height: calc(100% - (5px * 4));
+  transform-origin: 50%;
+  transform: scale(0.85);
+  opacity: 0;
+  transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.frame-btn2:hover .frame-btn2__solid {
+  opacity: 1;
+  transform: scale(1);
+}
+.frame-btn2__outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.frame-btn2__outline--tall {
+  margin: 0 5px;
+  width: calc(100% - (5px * 2));
+  height: 100%;
+}
+.frame-btn2__outline--flat {
+  margin: 5px 0;
+  height: calc(100% - (5px * 2));
+  width: 100%;
+}
+.frame-btn2__line {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.frame-btn2__line--tall:before, .frame-btn2__line--tall:after {
+  height: 100%;
+  width: 1px;
+  top: 0;
+ 
+}
+.frame-btn2:hover .frame-btn2__outline--flat .frame-btn2__line--tall:before, .frame-btn2:hover .frame-btn2__outline--flat .frame-btn2__line--tall:after {
+  transform: scaleY(0);
+}
+.frame-btn2:hover .frame-btn2__outline--tall .frame-btn2__line--tall:before, .frame-btn2:hover .frame-btn2__outline--tall .frame-btn2__line--tall:after {
+  margin: 5px 0;
+  height: calc(100% - (5px * 2));
+}
+.frame-btn2__line--tall:before {
+  left: 0;
+}
+.frame-btn2__line--tall:after {
+  right: 0;
+}
+.frame-btn2__line--flat:before, .frame-btn2__line--flat:after {
+  width: 100%;
+  height: 1px;
+  left: 0;
+}
+.frame-btn2:hover .frame-btn2__outline--tall .frame-btn2__line--flat:before, .frame-btn2:hover .frame-btn2__outline--tall .frame-btn2__line--flat:after {
+  transform: scaleX(0);
+}
+.frame-btn2:hover .frame-btn2__outline--flat .frame-btn2__line--flat:before, .frame-btn2:hover .frame-btn2__outline--flat .frame-btn2__line--flat:after {
+  margin: 0 5px;
+  width: calc(100% - (5px * 2));
+}
+.frame-btn2__line--flat:before {
+  top: 0;
+}
+.frame-btn2__line--flat:after {
+  bottom: 0;
+}
+.frame-btn2__line:before, .frame-btn2__line:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #00ffff;
+  transition: 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.frame-btn2:hover .frame-btn2__line:before, .frame-btn2:hover .frame-btn2__line:after {
+  transition: 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+button {
+	padding: 0;
+	overflow: visible;
+	background: none;
+	border: none;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+/**
+
+ * All the variables that can be used to extract Shopify global settings
+ */
+/* Colors */
+/* Typography */
+@font-face {
+	font-family: "DIN Neuzeit Grotesk";
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+	src:
+		url("https://fonts.shopifycdn.com/din_neuzeit_grotesk/dinneuzeitgrotesk_n7.2e3a6dec0d428cd2d2453b96ef3acb526d6f681d.woff2?h1=c3BhY2V4LmNvbQ&hmac=3183bc7727a3e7a2ee8d460b36d9cbe1575a1e1e55b67d20d34eb7b49d61fd10")
+		format("woff2"),
+		url("https://fonts.shopifycdn.com/din_neuzeit_grotesk/dinneuzeitgrotesk_n7.59a1cdca66d0ea85e97f53efe77e96911d042cfb.woff?h1=c3BhY2V4LmNvbQ&hmac=8f45b474f345be82d0bc79bcc08c54510bfc42afa09c5aef33dc217818490f94")
+		format("woff");
+}
+
+@font-face {
+	font-family: Roboto;
+	font-weight: 300;
+	font-style: normal;
+	font-display: fallback;
+	src:
+		url("https://fonts.shopifycdn.com/roboto/roboto_n3.fcf1a8ca0d134f200393562dbdc9f5836276782d.woff2?h1=c3BhY2V4LmNvbQ&hmac=18d032964ac250aec316c87898c92a8bf978ae6b004d78522e53dc814d38f7f4")
+		format("woff2"),
+		url("https://fonts.shopifycdn.com/roboto/roboto_n3.fa321b1ddee0338f7cf3bfb01c364bbc1b6a419a.woff?h1=c3BhY2V4LmNvbQ&hmac=2d64b548dc2d848cd8191f2e924949536fcda4aba2e47406b85d52c29649f1ca")
+		format("woff");
+}
+
+@font-face {
+	font-family: Roboto;
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+	src:
+		url("https://fonts.shopifycdn.com/roboto/roboto_n4.da808834c2315f31dd3910e2ae6b1a895d7f73f5.woff2?h1=c3BhY2V4LmNvbQ&hmac=2d02fe579dd12bda018f6cc7e9f621078060eb0bcf655def9ef9388193a729c3")
+		format("woff2"),
+		url("https://fonts.shopifycdn.com/roboto/roboto_n4.a512c7b68cd7f12c72e1a5fd58e7f7315c552e93.woff?h1=c3BhY2V4LmNvbQ&hmac=407afb5f109c94e1b673c1500fcb95507c28e9d0e79097c09676766f595bc55f")
+		format("woff");
+}
+
+@font-face {
+	font-family: Roboto;
+	font-weight: 300;
+	font-style: italic;
+	font-display: fallback;
+	src:
+		url("https://fonts.shopifycdn.com/roboto/roboto_i3.822f1ceb4cac9d8a65193433be86f1fa41cc2dec.woff2?h1=c3BhY2V4LmNvbQ&hmac=4925790903d7f979e7e1b240c770954bcffb17a69ac2e53f1073e86a56a31f67")
+		format("woff2"),
+		url("https://fonts.shopifycdn.com/roboto/roboto_i3.f851bd42126845bf1959bbdd8e03e076fedf4a94.woff?h1=c3BhY2V4LmNvbQ&hmac=13b03dc32c3e12bf35c602eb32ed93a9824c555ab82825af07d57b390343d803")
+		format("woff");
+}
+
+@font-face {
+	font-family: Roboto;
+	font-weight: 400;
+	font-style: italic;
+	font-display: fallback;
+	src:
+		url("https://fonts.shopifycdn.com/roboto/roboto_i4.f98951b4b9b6e1096fc799cd05debd098bd422ac.woff2?h1=c3BhY2V4LmNvbQ&hmac=f3b8db8e9a4a3d53bfcd2f51f0335f1f06afaef3efbac337fa9a037841bebd70")
+		format("woff2"),
+		url("https://fonts.shopifycdn.com/roboto/roboto_i4.688a26691d45bc4053b6ae24a196cabdeedbc25c.woff?h1=c3BhY2V4LmNvbQ&hmac=75db7b0d4ef1bac2c5ba1cde43a297a6cddef45d747d22c1105399e7ac3a0fdf")
+		format("woff");
+}
+
+
+
+/**
+ * Text-level semantic
+ */
+a {
+	color: inherit;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+body{
+/* 	background-image: url("earth.jpg"); */
+    overflow: inherit;
+	  background-size: 1500px;
+		display: flex;
+	justify-content: center;
+}
+.page{
+	 width: 80%;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+	margin-top:0px; 	
+width:500px;
+height:420px; 
+}
+
+
+
+.mainText {
+	font-family: 'Song Myung', serif;
+	display: flex;
+	justify-content: center;
+	font-style: initial;
+	font-size: 2em;
+	font-weight: 1000;
+	border-radius: 10px;
+	margin-left:185px;
+	top: 200px;
+	width: 130px;
+	color: #00ffff;
+}
+
+.mainText2 {
+	font-size: large;
+	font-family: 'Song Myung', serif;
+	display: flex;
+	justify-content: center;
+	left: 0%;
+	top: 200px;
+	font-style: initial;
+	color: #00ffff;
+}
+
+
+
+.mainText:hover {
+	background-color: black;
+	color: white;
+	transition: width 1000ms ease-in, background-color 1000ms ease-in;
+}
+
+
+
+
+
+.goRegister {
+	font-family: 'Song Myung', serif;
+	margin-left:40px;
+	width: 420px;
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	color:#00ffff;
+
+}
+
+.errorMsg {
+	border: none; 
+    background: transparent;
+	font-family: 'Song Myung', serif;
+	margin-bottom:28px;
+	padding-top:10px;
+	 margin-left:35px;
+	width:430px;
+	border-radius:10px;
+	color: red;
+	font-weight: lighter;
+	height: 42px;
+	border: 1px solid red;
+}
+
+.regex{
+	font-family: 'Song Myung', serif;
+	margin-left: 22px;
+	margin-top:15px;
+}
+
+
+.duplcheck{
+	position: absolute;
+	margin-top:-31px;
+	margin-left: 140px;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+:root {
+  --primary: red;
+  --secondary: blue;
+  --s-1: #9170fc;
+  --s-2: #00fcd2;
+  --s-3: #fdef92;
+  --s-4: #f07aa0;
+}
+/* 로그인버튼 크기조작은 back으로 */
+.back {
+	margin-top:28px;
+	margin-left:0px;
+	width: 430px;
+	height:70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5em;
+  font-size: 2em;
+  background: linear-gradient(123deg, black 0%, #042D64) no-repeat top left/150%;
+}
+
+.mainBtn {
+	padding: 0;
+	overflow: visible;
+	background: none;
+	border: none;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+.mainBtn2 {
+	margin-left:200px;
+	margin-top:-80px;
+	position:absolute;
+	padding: 0;
+	overflow: visible;
+	background: none;
+	border: none;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
+.btn {
+	padding-top:0px;
+	font-family: 'Song Myung', serif;
+	width: 100%;
+	height:  100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: url(https://api.thumbr.io/whitenoise-361x370.png?background=00000000&noise=000000f&density=50&opacity=40) repeat top left/1.25em, url(https://www.transparenttextures.com/patterns/green-dust-and-scratches.png) no-repeat center/100%;
+  /* font-family: "Space Mono", monospace; */
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 0.025em currentColor;
+  text-shadow: 0.05em 0.075em 0.075em rgba(255, 255, 255, 0.8), 0.05em 0.075em 1em rgba(255, 255, 255, 0.5), -0.04em -0.04em 0.05em rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0.1em 0.1em 0.075em rgba(255, 255, 255, 0.666), inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.25), inset 0 0 0.4em rgba(255, 255, 255, 0.25);
+  transition: 0.5s;
+  will-change: filter;
+}
+
+.btn:before {
+  content: "";
+  z-index: -1;
+  mix-blend-mode: color;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  width: 200%;
+  left: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 10%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9), transparent 20%, transparent 30%, white, rgba(255, 255, 255, 0.75), transparent 70%, transparent, white, rgba(255, 255, 255, 0.75), transparent);
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+  transform: translate3d(-50%, 0, 0);
+  transition: 0.4s;
+}
+.btn:hover:after, .btn:focus:after {
+  transform: translate3d(0%, 0, 0) scale3d(1.5, 1.2, 1);
+}
+
+
+
+.btn--plain {
+  background: white;
+  -webkit-text-stroke: initial;
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+}
+.btn--plain:hover, .btn--plain:focus {
+  background: #cccccc;
+}
+.btn--plain:before, .btn--plain:after {
+  content: none;
+}
+
+.btn--1:before{
+  top: -50%;
+  left: -5%;
+  height: 300%;
+  width: 200%;
+  background: radial-gradient(6% 10% at 77% 20%, var(--s-1) 5%, var(--s-2) 60%, var(--s-2) 65%, var(--s-3) 80%, var(--s-3) 70%, transparent 95%), radial-gradient(25% 69% at 40% 10%, var(--s-1) 40%, var(--s-2) 60%, var(--s-2) 65%, var(--s-3) 80%, var(--s-3) 90%, transparent), radial-gradient(20% 55% at -2% 10%, var(--s-1) 50%, var(--s-2) 70%, var(--s-3) 85%, transparent), radial-gradient(12% 19% at 31% 98%, var(--s-1) 30%, var(--s-2) 60%, var(--s-2) 65%, var(--s-3) 80%, var(--s-3) 0%, transparent), radial-gradient(18% 19% at 0 94%, var(--s-1), var(--s-2) 60%, var(--s-2) 55%, var(--s-3) 70%, var(--s-3) 75%, var(--s-4), transparent), radial-gradient(30% 43% at 73% 83%, var(--s-1) 55%, var(--s-2) 70%, var(--s-2) 65%, var(--s-3), transparent), radial-gradient(40% 50% at 20% 20%, var(--s-3) 20%, var(--s-4), transparent), radial-gradient(40% 65% at 40% 25%, var(--s-3) 50%, var(--s-4), var(--s-1) 80%, transparent 100%), radial-gradient(70% 70% at 110% 85%, var(--s-3), var(--s-4) 90%, transparent), radial-gradient(30% 23% at 5% 65%, var(--s-4), var(--s-1) 40%, var(--s-1) 40%, var(--s-4) 65%, var(--s-4) 70%, var(--s-1), transparent), radial-gradient(100% 100% at 70% 20%, var(--s-3), var(--s-4));
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+}
+.btn--1:hover:before, .btn--1:focus:before {
+  background-position: 100% 0%;
+}
+
+.btn--1:before {
+  filter: url("data:image/svg+xml;utf8,\a<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\a<defs>\a<filter id='filter' x='-20%' y='-20%' width='140%' height='140%' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'>\a<feTurbulence type='turbulence' baseFrequency='0.04 0.03' numOctaves='12' seed='27' stitchTiles='stitch' x='0%' y='0%' width='100%' height='100%' result='turbulence'/>\a<feDisplacementMap in='SourceGraphic' in2='turbulence' scale='15' xChannelSelector='R' yChannelSelector='B' x='0%' y='0%' width='100%' height='100%' result='displacementMap2'/></filter>\a</defs>\a</svg>\a#filter\a") contrast(1.3);
+}
+
+
+
+
+.mainText:hover {
+	background-color: black;
+	color: white;
+	transition: width 1000ms ease-in, background-color 1000ms ease-in;
+}
+
+
+ *:focus {
+     /*  outline: none; */
+     transition: width 1000ms ease-in, border-color 1000ms ease-in;
+      
+    }
+    .form-box {
+    margin-left:35px;
+      width: 80%;
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    .inputTag {
+	display: grid;
+     font-family: Avenir;
+     -webkit-text-size-adjust: 100%;
+     -webkit-font-smoothing: antialiased;
+     overflow: hidden;
+     margin-top:10px;
+	
+}
+    /* 첫번쨰 인풋 */
+     .input-ty {
+     font-size: large;
+         font-weight:55px;
+      border: none; 
+    background: transparent;
+     font-family: 'Song Myung', serif;
+      display: inline-block;
+      width: 430px;
+      height: 40px;
+      border-radius: 10px;
+      border: 2px solid #00ffff;
+      padding: 8px;
+      box-sizing: border-box;
+      color: #00ffff;
+    }
+     /* 나머지 인풋 */
+    .input-ty1 {
+    font-size: large;
+        font-weight:55px;
+      border: none; 
+    background: transparent;
+    font-family: 'Song Myung', serif;
+      display: inline-block;
+      width: 430px;
+      margin-top: 10px;
+      height: 40px;
+      border-radius: 10px;
+      border: 2px solid #00ffff;
+      padding: 8px;
+      box-sizing: border-box;
+      color: #00ffff;
+    }
+    .input-ty::placeholder{
+    font-size: large;
+     color: #00ffff;
+    }
+    .input-ty1::placeholder{
+    font-size: large;
+     color: #00ffff;
+    }
+    
+    .highlight {
+      position: absolute;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      box-shadow: 4px 4px 4px #ccc;
+      width: 0;
+      height: 0;
+      border-radius: 10px;
+      opacity:0;
+    }
+
+
+.checkBoxText{
+	color: #00ffff;
+	 font-family: 'Song Myung', serif;
+}
+.checkDiv{
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+
+
+.neon_effect .pGold:first-child{
+  color: #fff;
+ font-family: 'Song Myung', serif;
+  font-size:20px;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@keyframes neon3 {
+   from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+@keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+@keyframes neon7 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px red, 0 0 35px red, 0 0 40px red, 0 0 50px red, 0 0 75px red;
+  }
+}
+
+@keyframes neon8{
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px aqua, 0 0 70px aqua, 0 0 80px aqua, 0 0 100px aqua, 0 0 150px aqua;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px aqua, 0 0 35px aqua, 0 0 40px aqua, 0 0 50px aqua, 0 0 75px aqua;
+  }
+}
+
+
+/* 이메일 인증관련*/
+#mail_check_input_box_false{
+	
+	color:#00ffff;
+	margin-left:30px;
+   
+}
+ 
+#mail_check_input_box_true{
+	color:#00ffff;
+	 margin-left:30px;
+  
+}
+.mail_check_button{
+ margin-left:20px;
+     color: #00ffff; 
+     margin-bottom: 5px;
+    }
+.emailCheck{
+	margin-left: 28px;
+}
+
+.mail_check_input{
+	padding-left:10px;
+	 border: 1px solid #00ffff;
+    background: transparent;
+	color:#00ffff;
+   width: 300px;
+   height: 35px;
+   border-radius: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+
+}
+.mail_check_input::placeholder{
+     color: #00ffff;
+    }
+    

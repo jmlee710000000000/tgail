@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.study.home.mapper.ShipMapper">
+
+<!-- criteria(검색조건) -->
+	<sql id="criteria">
+		    <if test="keyword != null">
+				where (ShipName like concat ('%', #{keyword}, '%'))
+		    </if>
+	</sql>
+	
+	<!-- 상품 검색 -->
+	<select id="getGoodsList" resultType="org.study.home.model.ShipDTO">
+	
+			select  shipId, shipName, shipPrice from shipTBL a 
+			<include refid="criteria"></include>
+			order by shipId desc 
+			limit #{skip}, #{amount}	
+	
+	</select>
+	
+	<!-- 상품 총 개수 -->
+	<select id="goodsGetTotal" resultType="int">
+
+  		select count(*) from shipTBL
+  		
+		<include refid="criteria"></include>
+		
+	</select>
+	
+	<!-- 상품 정보 -->
+	<select id="getGoodsInfo" resultType="org.study.home.model.ShipDTO">
+	
+			select shipId, shipName,shipPrice, shipStock, shipIntro 
+			from shipTBL where shipid = ${shipid}	
+	
+	</select>
+
+	
+  </mapper>

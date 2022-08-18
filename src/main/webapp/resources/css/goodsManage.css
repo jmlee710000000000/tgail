@@ -1,0 +1,541 @@
+/*@charset "UTF-8";
+/* 상품 목록 영역 */
+
+a{
+	   text-decoration:none;
+}
+
+body{
+  background-image: url("earth.jpg"); 
+  background-size: cover;
+width: 1920px;
+}
+
+.searchInput{
+	margin-left:69px;
+
+	background-color: transparent;
+	border-color:#00ffff;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	color: #00ffff;
+	padding-left: 10px;
+}
+
+.pageMoveBtn{
+	color: #00ffff;
+	
+}
+
+.pageMoveBtn a{
+	
+	color: #00ffff;
+}
+
+.goods_table_wrap{
+		border-radius:20px;
+	padding: 20px 35px
+}
+.goods_table{
+		border-radius:20px;
+	width: 100%;
+    border-color:transparent;
+    text-align: center;
+    border-collapse: collapse;
+}
+.goods_table td{
+	padding: 10px 5px;
+	   border-color:transparent;
+}
+.goods_table thead{
+	color:#00ffff;
+	background-color: transparent;
+	font-weight: 600;
+}
+.goods_table a{
+   text-decoration:none;
+	color:white;
+	font-weight: 500;
+}
+.th_column_1{
+	width:120px;
+}
+.th_column_2{
+	width:120px;
+}
+.th_column_3{
+	width:120px;
+}
+.th_column_4{
+	width:120px;
+}
+
+	
+.table_empty{
+	height: 50px;
+    text-align: center;
+    margin: 200px 0 215px 0px;
+    font-size: 25px;
+}
+
+	/* 검색 영역 */
+.search_wrap{
+	margin-top:15px;
+}
+.search_input{
+    position: relative;
+    text-align:center;	
+}
+.search_input input[name='keyword']{
+	padding-left:20px;
+	
+    font-size: 15px;
+    height: 24px;
+    line-height: 20px;
+}
+
+
+
+	/* 페이지 버튼 인터페이스 */
+.pageMaker_wrap{
+	text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.pageMaker{
+    list-style: none;
+    display: inline-block;
+}	
+.pageMaker_btn {
+	color:red;
+    float: left;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+}
+.active{
+	border : 2px solid #00ffff;
+	font-weight:400;
+	color:#00ffff;
+}
+.next, .prev {
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+.pageMaker_btn a:link {color: #00ffff;}
+.pageMaker_btn a:visited {color: #00ffff;}
+.pageMaker_btn a:active {color:#00ffff;}
+.pageMaker_btn a:hover {color: #00ffff;}
+.next a, .prev a {
+    color: #00ffff;
+}
+
+
+
+
+
+
+
+.neon_effect p {
+  text-align: center;
+  font-size: 1em;
+  margin: 20px;
+  transition: all 0.4s;
+}
+.neon_effect p:nth-child(1){
+  color: #fff;
+   font-family: Comfortaa;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(2){
+  color: #fff;
+  font-family: Lobster;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(3){
+  color: #fff;
+  font-family: Abril Fatface;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(4){
+  color: #fff;
+  font-family: Comfortaa;
+  font-weight: 700;
+  animation: neon4 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(5){
+  color: #fff;
+  font-family: 'Do Hyeon';
+  font-weight: bold;
+  animation: neon5 1.5s ease-in-out infinite alternate;
+}
+.neon_effect p:nth-child(6){
+  color: #fff;
+  font-family: 'Notable', sans-serif;
+  font-weight: bold;
+  animation: neon6 1.5s ease-in-out infinite alternate;
+}
+
+
+
+.neon_effect .p1:first-child{
+  color: #fff;
+  font-family: Abril Fatface;
+  animation: neon7 1.5s ease-in-out infinite alternate;
+}
+.neon_effect .pGold:first-child{
+  color: #fff;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+.neon_effect .exitBtn:first-child{
+  color: #fff;
+ font-family: 'Song Myung', serif;
+  font-weight: bold;
+  font-size:2em;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+.exitBtnBox{
+	margin-top:700px;
+	margin-left:70%;
+	position:fixed;
+	width: 250px;
+	
+}
+
+
+
+
+
+/* 상품번호 */
+.neon_effect td:nth-child(1){
+  color: #fff;
+   font-family: Comfortaa;
+ 
+  animation: neon6 1.5s ease-in-out infinite alternate;
+}
+/* 상품번호 */
+.neon_effect td:nth-child(2){
+  color: #fff;
+  font-family: Lobster;
+    animation: neon8 1.5s ease-in-out infinite alternate;
+
+}
+/* 상품번호 */
+.neon_effect td:nth-child(3){
+  color: #fff;
+  font-family: Abril Fatface;
+  animation: neon7 1.5s ease-in-out infinite alternate;
+}
+/* 상품번호 */
+.neon_effect td:nth-child(4){
+  color: #fff;
+  font-family: Comfortaa;
+  font-weight: 700;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+}
+
+
+
+
+
+
+
+.neon_effect .pBlue:first-child{
+	 font-family: Comfortaa;
+  color: #fff;
+   animation: neon2 1.5s ease-in-out infinite alternate;
+}
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@keyframes neon3 {
+   from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+@keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+@keyframes neon7 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px red, 0 0 35px red, 0 0 40px red, 0 0 50px red, 0 0 75px red;
+  }
+}
+
+@keyframes neon8{
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px aqua, 0 0 70px aqua, 0 0 80px aqua, 0 0 100px aqua, 0 0 150px aqua;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px aqua, 0 0 35px aqua, 0 0 40px aqua, 0 0 50px aqua, 0 0 75px aqua;
+  }
+}
+/* @keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@keyframes neon3 {
+   from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+@keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+} */
+
+
+
+
+
+
+/*무지개버튼*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+:root {
+  --primary: red;
+  --secondary: blue;
+  --s-1:  #005eff ;
+  --s-2:   #00a1ff ;
+  --s-3:  #00c0ff;
+  --s-4: #00ffff;
+
+  /* 저기빈칸은 컬러들어가는곳 */
+}
+
+
+/* 로그인버튼 크기조작은 back으로 */
+.back {
+
+	width: 430px;
+	height:70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5em;
+  font-size: 2em;
+  background: linear-gradient(123deg, black 0%, #042D64) no-repeat top left/150%;
+}
+
+
+
+
+
+
+.btn {
+	
+	padding-top:0px;
+	font-family:sans-serif;
+	width: 80px;
+	
+	height: 34px;;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: url(https://api.thumbr.io/whitenoise-361x370.png?background=00000000&noise=000000f&density=50&opacity=40) repeat top left/1.25em, url(https://www.transparenttextures.com/patterns/green-dust-and-scratches.png) no-repeat center/100%;
+  /* font-family: "Space Mono", monospace; */
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 0.025em currentColor;
+  text-shadow: 0.05em 0.075em 0.075em rgba(255, 255, 255, 0.8), 0.05em 0.075em 1em rgba(255, 255, 255, 0.5), -0.04em -0.04em 0.05em rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0.1em 0.1em 0.075em rgba(255, 255, 255, 0.666), inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.25), inset 0 0 0.4em rgba(255, 255, 255, 0.25);
+  transition: 0.5s;
+  will-change: filter;
+}
+
+.goHomeBtn{
+	   text-decoration:none;
+	display:flex;
+	margin-left:1600px;
+	margin-top:-40px;
+	padding-top: 10px;
+	font-family:sans-serif;
+	width: 120px;
+	height:  60px;;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: url(https://api.thumbr.io/whitenoise-361x370.png?background=00000000&noise=000000f&density=50&opacity=40) repeat top left/1.25em, url(https://www.transparenttextures.com/patterns/green-dust-and-scratches.png) no-repeat center/100%;
+  /* font-family: "Space Mono", monospace; */
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 0.025em currentColor;
+  text-shadow: 0.05em 0.075em 0.075em rgba(255, 255, 255, 0.8), 0.05em 0.075em 1em rgba(255, 255, 255, 0.5), -0.04em -0.04em 0.05em rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0.1em 0.1em 0.075em rgba(255, 255, 255, 0.666), inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.25), inset 0 0 0.4em rgba(255, 255, 255, 0.25);
+  transition: 0.5s;
+  will-change: filter;
+}
+
+.btn:before {
+	   text-decoration:none;
+  content: "";
+  z-index: -1;
+  mix-blend-mode: color;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.btn:after {
+	   text-decoration:none;
+  content: "";
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  width: 200%;
+  left: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 10%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9), transparent 20%, transparent 30%, white, rgba(255, 255, 255, 0.75), transparent 70%, transparent, white, rgba(255, 255, 255, 0.75), transparent);
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+  transform: translate3d(-50%, 0, 0);
+  transition: 0.4s;
+}
+.btn:hover:after, .btn:focus:after {
+	
+  transform: translate3d(0%, 0, 0) scale3d(1.5, 1.2, 1);
+}
+
+.goHomeBtn:before {
+  content: "";
+  z-index: -1;
+  mix-blend-mode: color;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.goHomeBtn:after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  width: 200%;
+  left: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 10%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9), transparent 20%, transparent 30%, white, rgba(255, 255, 255, 0.75), transparent 70%, transparent, white, rgba(255, 255, 255, 0.75), transparent);
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+  transform: translate3d(-50%, 0, 0);
+  transition: 0.4s;
+}
+.goHomeBtn:hover:after, .goHomeBtn:focus:after {
+  transform: translate3d(0%, 0, 0) scale3d(1.5, 1.2, 1);
+}
+
+
+.btn--plain {
+  background: white;
+  -webkit-text-stroke: initial;
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+}
+.btn--plain:hover, .btn--plain:focus {
+  background: #cccccc;
+}
+.btn--plain:before, .btn--plain:after {
+  content: none;
+}
+
+.btn--1:before{
+  top: -50%;
+  left: -5%;
+  height: 300%;
+  width: 200%;
+  background: radial-gradient(6% 10% at 77% 20%, var(--s-1) 5%, var(--s-2) 60%, var(--s-2) 65%, var(--s-3) 80%, var(--s-3) 70%, transparent 95%), radial-gradient(25% 69% at 40% 10%, var(--s-1) 40%, var(--s-2) 60%, var(--s-2) 65%, var(--s-3) 80%, var(--s-3) 90%, transparent), radial-gradient(20% 55% at -2% 10%, var(--s-1) 50%, var(--s-2) 70%, var(--s-3) 85%, transparent), radial-gradient(12% 19% at 31% 98%, var(--s-1) 30%, var(--s-2) 60%, var(--s-2) 65%, var(--s-3) 80%, var(--s-3) 0%, transparent), radial-gradient(18% 19% at 0 94%, var(--s-1), var(--s-2) 60%, var(--s-2) 55%, var(--s-3) 70%, var(--s-3) 75%, var(--s-4), transparent), radial-gradient(30% 43% at 73% 83%, var(--s-1) 55%, var(--s-2) 70%, var(--s-2) 65%, var(--s-3), transparent), radial-gradient(40% 50% at 20% 20%, var(--s-3) 20%, var(--s-4), transparent), radial-gradient(40% 65% at 40% 25%, var(--s-3) 50%, var(--s-4), var(--s-1) 80%, transparent 100%), radial-gradient(70% 70% at 110% 85%, var(--s-3), var(--s-4) 90%, transparent), radial-gradient(30% 23% at 5% 65%, var(--s-4), var(--s-1) 40%, var(--s-1) 40%, var(--s-4) 65%, var(--s-4) 70%, var(--s-1), transparent), radial-gradient(100% 100% at 70% 20%, var(--s-3), var(--s-4));
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+}
+.btn--1:hover:before, .btn--1:focus:before {
+  background-position: 100% 0%;
+}
+
+.btn--1:before {
+  filter: url("data:image/svg+xml;utf8,\a<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\a<defs>\a<filter id='filter' x='-20%' y='-20%' width='140%' height='140%' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'>\a<feTurbulence type='turbulence' baseFrequency='0.04 0.03' numOctaves='12' seed='27' stitchTiles='stitch' x='0%' y='0%' width='100%' height='100%' result='turbulence'/>\a<feDisplacementMap in='SourceGraphic' in2='turbulence' scale='15' xChannelSelector='R' yChannelSelector='B' x='0%' y='0%' width='100%' height='100%' result='displacementMap2'/></filter>\a</defs>\a</svg>\a#filter\a") contrast(1.3);
+} 

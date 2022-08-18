@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.study.home.mapper.OrderMapper">
+		
+		<!-- 주문 상품 정보 -->
+	<select id="getGoodsInfo" resultType="org.study.home.model.OrderPageItemDTO">
+	
+		select shipId, shipName, shipPrice
+		from shipTBL where shipId = #{shipId}	
+	
+	</select>
+
+  </mapper>

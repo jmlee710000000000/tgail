@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.study.home.mapper.MemberMapper">
+
+
+	<select id="login" resultType="org.study.home.model.MemberDTO">
+		select * from userTBL where user_id = #{user_id} and user_pw =
+		#{user_pw}
+	</select>
+
+	<select id="getRealPassword" resultType="String">
+		select user_pw from userTBL where user_id = #{user_id}
+	</select>
+
+	<select id="getRealUserNo" resultType="String">
+		select user_no from userTBL where user_id = #{user_id}
+	</select>
+
+
+	<insert id="memberInsert">
+		INSERT INTO userTBL (user_id, user_pw, user_nick, user_address , user_phone, user_email,
+		user_adult, email_check)
+		VALUES(#{user_id},#{user_pw},#{user_nick}, #{user_address},#{user_phone},#{user_email},#{user_adult},#{email_check})
+	</insert>
+
+	<!-- <select id="memberIDcheck" resultType="org.study.home.model.MemberDTO"> 
+		SELECT COUNT(*) FROM userTBL WHERE user_id = #{user_id} </select> -->
+	<select id="idCheck" resultType="String">
+		select user_id from userTBL where user_id = #{user_id}
+	</select>
+	<select id="nickCheck" resultType="String">
+		select user_nick from userTBL where user_nick = #{user_nick}
+	</select>
+	<select id="emailCheck" resultType="String">
+		select user_email from userTBL where user_email = #{user_email}
+	</select>
+
+	<select id="userList"
+		resultType="org.study.home.model.MemberDTO">
+		SELECT * FROM userTBL
+	</select>
+	<delete id="memberDelete">
+		DELETE FROM userTBL WHERE user_id = #{user_id}
+	</delete>
+
+	<select id="memberRead"
+		resultType="org.study.home.model.MemberDTO">
+		SELECT * FROM userTBL WHERE user_no = #{user_no}
+	</select>
+	
+	<select id="memberRead2"
+      resultType="org.study.home.model.MemberDTO">
+      SELECT * FROM userTBL WHERE user_id = #{user_id}
+   </select>
+	
+
+	<select id="getRealisAdmin" resultType="String">
+      select adminCk from userTBL where user_id = #{user_id}
+   </select>
+
+	<update id="memberUpdate">
+
+		UPDATE userTBL SET user_id = #{user_id},user_nick = #{user_nick},user_phone
+		= #{user_phone},user_email = #{user_email},user_adult =
+		#{user_adult},email_check = #{email_check} WHERE user_no = #{user_no}
+	</update>
+
+	<!-- 주문자 정보 -->
+  	<select id="getMemberInfo" resultType="org.study.home.model.MemberDTO">
+  	
+  		SELECT user_id, user_nick, user_email, user_address
+  		FROM userTBL 
+  		WHERE user_id = #{user_id}
+  	
+  	</select>
+	
+</mapper>
