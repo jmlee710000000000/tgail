@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -379,10 +381,15 @@ public class AdminController {
 	
 	/* 상품 상세 */
 	@GetMapping("/goodsDetail/{shipId}")
-	public String goodsDetailGET(@PathVariable("shipId")int shipId, Model model) {
-		
+	public String goodsDetailGET(@PathVariable("shipId")int shipId, HttpServletRequest request, Model model) {
 		logger.info("goodsDetailGET()..........");
+		
+		HttpSession session = request.getSession();
+		MemberDTO member = (MemberDTO) session.getAttribute("member");
+		
+		System.out.println("^^^^^^^^^^^^^^^^"+member);
 		model.addAttribute("goodsInfo", shipService.getGoodsInfo(shipId));
+		model.addAttribute("member", member);
 		return "/goodsDetail";
 	}
 	

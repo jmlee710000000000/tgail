@@ -17,7 +17,7 @@ public class CartInterceptor implements HandlerInterceptor {
 		MemberDTO dto = (MemberDTO)session.getAttribute("member");
 		
 		if(dto == null) {
-			response.sendRedirect("/index");
+			response.sendRedirect("/");
 			return false;
 		} else {
 			return true;

@@ -44,5 +44,13 @@
 	
 	</select>
 	
+		
+	
+	<delete id="deleteOrderCart">
+	
+		delete from ship_cart where user_id = #{user_id} and shipId = #{shipId}
+
+	</delete>
+	
 	
   </mapper>

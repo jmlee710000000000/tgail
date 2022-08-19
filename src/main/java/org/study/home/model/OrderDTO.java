@@ -99,5 +99,10 @@ public class OrderDTO {
 				+ ", orderDate=" + orderDate + "]";
 	}
 
+	public void getOrderPriceInfo() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

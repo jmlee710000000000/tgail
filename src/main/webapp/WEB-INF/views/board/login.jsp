@@ -54,18 +54,14 @@ body {
 <body>
 
 
-	<c:if test="${empty sessionScope.user_no}">
-
-
-
-
+	<c:if test="${empty member.user_id}">
 
 		<video id="videobcg" preload="auto" autoplay="true" loop="loop"
-	muted="muted">
+			muted="muted">
 
-	<source src="../../../resources/css/spaceGalaxy.mp4" type="video/mp4">
+			<source src="../../../resources/css/spaceGalaxy.mp4" type="video/mp4">
 
-</video>
+		</video>
 
 		<div class="page">
 

@@ -30,6 +30,7 @@
 	width: 90%;
 	margin: auto;
 }
+
 .type_list {
 	width: 100%;
 	border-bottom: 1px solid #00ffff;
@@ -39,6 +40,7 @@
 .type_list tr {
 	height: 91.2px;
 }
+
 .price {
 	text-align: center;
 }
@@ -48,10 +50,12 @@
 	margin-top: 30px;
 	margin-bottom: 40px;
 }
+
 .pageMaker {
 	list-style: none;
 	display: inline-block;
 }
+
 .pageMaker_btn {
 	float: left;
 	width: 40px;
@@ -59,10 +63,12 @@
 	line-height: 40px;
 	margin-left: 20px;
 }
+
 .active {
 	border: 2px solid #00ffff;
 	font-weight: 400;
 }
+
 .next, .prev {
 	border: 1px solid #ccc;
 	padding: 0 10px;
@@ -71,63 +77,49 @@
 .pageMaker_btn a:link {
 	color: #00ffff;
 }
+
 .pageMaker_btn a:visited {
-	color:#00ffff;
+	color: #00ffff;
 }
+
 .pageMaker_btn a:active {
-	color:#00ffff;
+	color: #00ffff;
 }
+
 .pageMaker_btn a:hover {
 	color: #00ffff;
 }
+
 .next a, .prev a {
 	color: #ccc;
 }
 /* 상품 이미지 관련 */
 .image_wrap {
-margin-left:200px;
-	height:72px;
+	margin-left: 200px;
+	height: 72px;
 	width: 200px;
 }
+
 .image_wrap img {
-border-radius:20px;
+	border-radius: 20px;
 	max-width: 130%;
-	height:72px;
+	height: 72px;
 	display: block;
 }
 </style>
+<link rel="stylesheet" href="/resources/css/make.css">
 </head>
 <body>
-
+	<%@include file="./header.jsp"%>
 	<video id="videobcg" preload="auto" autoplay="true" loop="loop"
 		muted="muted">
 
 		<source src="../../../resources/css/spaceGalaxy.mp4" type="video/mp4">
 
 	</video>
-
-<a href="/"><button   class="goHomeBtn"> SPACE SHIP </button></a>
-
-
 	<div class="wrapper">
 		<div class="wrap">
-			<div class="search_area">
-				<div class="search_wrap">
-					<form id="searchForm" action="/search" method="get">
 
-						<select name="type" class="select_input">
-							<option value="T">책 제목</option>
-							<option value="A">작가</option>
-						</select>
-
-						<div class="search_input">
-							<input class="searchInput" type="text" name="keyword"
-								value="<c:out value="${pageMaker.cri.keyword}"/>">
-							<button class='searchBtn'>검 색</button>
-						</div>
-					</form>
-				</div>
-			</div>
 			<div class="content_area">
 				<!-- 게시물 o -->
 				<c:if test="${listcheck != 'empty'}">
@@ -166,11 +158,11 @@ border-radius:20px;
 											</div>
 
 										</td>
-										
+
 										<td class="info">
 											<div class="rating">평점(추후 추가)</div>
 										</td>
-								
+
 										<td class="price">
 											<div class="priceText">${list.shipPrice}$</div>
 										</td>

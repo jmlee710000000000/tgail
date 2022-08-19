@@ -112,8 +112,20 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberDTO getMemberInfo(String user_id) {
 		
+		
+		
 		return mapper.getMemberInfo(user_id);
 		
+	}
+	
+	@Override
+	public MemberDTO memberLogin(MemberDTO dto)
+	{
+		String resultPW = mapper.getRealPassword(dto.getUser_id());
+		System.out.println("resultPW 값 : " + resultPW);
+		boolean loginFilter = pwEncoder.matches(dto.getUser_pw(), resultPW);
+		
+		return dto;
 	}
 
 	

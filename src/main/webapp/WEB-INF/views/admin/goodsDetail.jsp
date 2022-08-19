@@ -48,7 +48,7 @@ body {
 	background-color: black;
 }
 </style> 
-
+<%@include file="../header.jsp" %>
 
 <body>
 	<video id="videobcg" preload="auto" autoplay="true" loop="loop"

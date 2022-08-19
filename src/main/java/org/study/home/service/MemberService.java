@@ -28,4 +28,6 @@ public interface MemberService {
 	
 	/* 주문자 정보 */
 	public MemberDTO getMemberInfo(String user_id);
+
+	MemberDTO memberLogin(MemberDTO member);
 }

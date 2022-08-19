@@ -17,7 +17,7 @@
 	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
-
+<%@include file="header.jsp" %>
 	<div>${orderList}</div>
 	<div>${memberInfo}</div>
 	<div class="wrapper">

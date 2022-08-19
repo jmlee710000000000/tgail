@@ -90,6 +90,10 @@ public class MemberDTO {
 				+ user_adult + ", user_email=" + user_email + ", email_check=" + email_check + ", adminCk=" + adminCk
 				+ ", user_insertDate=" + user_insertDate + "]";
 	}
+	public void setMemberPw(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

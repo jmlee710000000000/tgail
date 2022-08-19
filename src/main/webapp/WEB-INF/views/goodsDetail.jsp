@@ -10,9 +10,10 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js"
    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
    crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="../../../resources/css/goodsDetail2.css">
+<link rel="stylesheet" href="/resources/css/make.css">
 </head>
 <body>
+<%@include file="./header.jsp" %>
 <a href="/cart/${member.user_id}">장바구니</a>
  <div class="wrapper">
 	<div class="wrap">

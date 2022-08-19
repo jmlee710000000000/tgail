@@ -110,7 +110,7 @@
 </style>
 </head>
 <body>
-
+<%@include file="header.jsp" %>
 	<div class="wrapper">
 		<div class="wrap">
 			<div class="search_area">

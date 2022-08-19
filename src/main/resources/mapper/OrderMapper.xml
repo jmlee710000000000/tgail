@@ -12,4 +12,36 @@
 	
 	</select>
 
+	<select id="getOrderInfo" resultType="org.study.home.model.OrderItemDTO">
+	
+		select shipId, shipPrice
+		from shipTBL where shipId = #{shipId}
+	
+	</select>
+	
+		<!-- 주문 테이블 등록 -->
+	<insert id="enrollOrder">
+	
+		insert into ship_order(orderId, addressee, memberId, memberAddr1,orderState, deliveryCost)
+    	values(#{orderId},#{addressee}, #{memberId}, #{memberAddr1}, '배송준비', #{deliveryCost})
+	
+	</insert>
+	
+	<!-- 주문 아이템 테이블 등록 -->
+	<insert id="enrollOrderItem">
+	
+		insert into ship_orderItem(orderId, shipId, shipCount, shipPrice)
+		values(#{orderId}, #{shipId}, #{shipCount}, #{shipPrice})
+	
+	</insert>
+	
+		<!-- 주문 재고 차감 -->
+	<update id="deductStock">
+	
+		update shipTBL set shipStock = #{shipStock} where shipId = #{shipId}
+	
+	</update>
+	
+
+	
   </mapper>
