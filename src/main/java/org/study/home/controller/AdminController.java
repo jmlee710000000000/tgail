@@ -173,7 +173,7 @@ public class AdminController {
 				return new ResponseEntity<>(list, HttpStatus.BAD_REQUEST);
 			}
 		}
-		String uploadFolder = "/home/lwk/image";
+		String uploadFolder = "C:\\upload\\";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		String str = sdf.format(date);
@@ -237,7 +237,7 @@ public class AdminController {
 	public ResponseEntity<byte[]> getImage(String fileName) {
 		logger.info("getImage()......." + fileName);
 
-		File file = new File("/home/lwk/image/" + fileName);
+		File file = new File("C:\\upload\\" + fileName);
 		ResponseEntity<byte[]> result = null;
 
 		try {
@@ -263,7 +263,7 @@ public class AdminController {
 		File file = null;
 		try {
 			/* 썸네일 파일 삭제 */
-			file = new File("/home/lwk/image/" + URLDecoder.decode(fileName, "UTF-8"));
+			file = new File("C:\\upload\\" + URLDecoder.decode(fileName, "UTF-8"));
 
 			file.delete();
 
