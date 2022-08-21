@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
@@ -39,14 +40,12 @@
    margin: 0;
    padding: 0;
 }
-
 body {
    padding: 0px, 0px, 0px, 0px;
    margin: 0px, 0px, 0px, 0px;
    overflow: hidden;
    background-color: #000;
 }
-
 .container {
    
 } */
@@ -86,7 +85,6 @@ body {
                <!-- <button type="button" name="signup" id="duplcheck" class="mainBtn2">
                   <div class="back2">
                      <a class="btn3 btn--3">중복체크</a>
-
                   </div>
                </button> -->
                <div class="id regex" id="div1"></div>
@@ -146,7 +144,6 @@ body {
                <button type="button" name="signup" id="signupbtn" class="mainBtn">
                   <div class="back">
                      <a class="btn btn--1"><p class="pGold">가입하기</p></a>
-
                   </div>
                </button>
             </div> -->
@@ -186,7 +183,6 @@ body {
                      <h1 class="Form__Title Heading u-h1">회원가입</h1>
                      <p class="Form__Legend">회원가입에 사용될 정보를 입력하세요</p>
                   </header>
-
                   <div class="Form__Alert Alert Alert--error" id="errorMsg"></div>
                   <div class="Form__Item">
                      <input type="text" class="Form__Input" name="user_id" id="user_id"
@@ -194,11 +190,6 @@ body {
                      <label class="Form__FloatingLabel">아이디</label>
                      <button type="button" class="Form__ItemHelp Link Link--primary"
                         id="duplcheck">중복체크</button>
-
-
-
-
-
                   </div>
                   <div class="id regex" id="div1"></div>
                   <div class="Form__Item">
@@ -238,21 +229,13 @@ body {
                         id="user_adult"><br> <span class="Text--subdued">당신은 성인입니까?</span> <input type="checkbox" class="" name="email_check"
                         id="email_check"> <br>
                   </div>
-
-
-
-
                   <button type="button" name="signup"
                      class="Form__Submit Button Button--primary Button--full"
                      id="signupbtn">회원가입</button>
-
                   
-
-
                   <div class="Form__Hint Form__Hint--center">
                      <span class="Text--subdued">다시 로그인하러 가시겠습니까?</span> <a href="/moveLogin" class="Link Link--secondary">로그인 하러가기</a>
                   </div>
-
                </form> --%>
 
 
@@ -287,12 +270,9 @@ body {
                      left : left,
                      width : curWidth,
                      height : curHeight
-
                   });
-
                }
             }); */
-
          $("#errorMsg").hide();
          var emailNumCheck = false;
          $("#id").on(
@@ -332,15 +312,10 @@ body {
                            idCheck = true;
                            return;
                         }
-
                      }
-
                   }
-
                   )
-
                })
-
          // 중복확인 & id 유효성검사  버튼          
          /* $("#duplcheck")
                .on(
@@ -390,27 +365,19 @@ body {
                                              "green");
                                        return;
                                     }
-
                                  }
-
                               }
-
                               )
-
                      })
-
          }) */
-
          $("#pw")
                .on(
                      "input",
                      function() {
                         var regex = /(?=.*\d)(?=.*[a-zA-ZS]).{8,}/;
                         var result = regex.exec($("#pw").val())
-
                         if (result != null) {
                            $(".pw.regex").html("");
-
                         } else {
                            $(".pw.regex")
                                  .html(
@@ -418,13 +385,10 @@ body {
                            $(".pw.regex").css("color", "red");
                         }
                      });
-
          //비밀번호 확인    
          $("#repw").on("keyup", function() {
-
             if ($("#pw").val() == $("#repw").val()) {
                $(".repw.regex").html("");
-
             } else {
                $(".repw.regex").html("비밀번호와 비밀번호확인의 뭐시기가 서로 안맞아버려");
                $(".repw.regex").css("color", "red");
@@ -441,7 +405,6 @@ body {
                $(".name.regex").css("color", "red");
                return;
             }
-
             $.ajax({
                url : "/nickCheck",
                type : 'post',
@@ -466,27 +429,20 @@ body {
                      nickCheck = true;
                      return;
                   }
-
                }
-
             }
-
             )
-
          })
-
          //전화번호 유효성검사
          $("#phone").on("input", function() {
             var regex = /^01\d\d{3,4}\d{4}$/;
             var result = regex.exec($("#phone").val());
-
             if (result != null) {
                $(".phone.regex").html("");
             } else {
                $(".phone.regex").html("하아...올바른 번호가 아닙니다...");
                $(".phone.regex").css("color", "red");
             }
-
          })
          //email유효성 검사
          $("#email")
@@ -535,28 +491,20 @@ body {
                                        emailCheck = true;
                                        return;
                                     }
-
                                  }
-
                               }
-
                               )
-
                      })
-
          /* 인증번호 이메일 전송 */
          $(".mail_check_button").click(function() {
             var email = $("#email").val();
             var cehckBox = $(".mail_check_input"); // 인증번호 입력란
             var boxWrap = $(".mail_check_input_box");
             $.ajax({
-
                type : "GET",
                url : "mailCheck?user_email=" + email,
                success : function(data) {
-
                   //console.log("data : " + data);
-
                   cehckBox.attr("disabled", false);
                   boxWrap.attr("id", "mail_check_input_box_true");
                   code = data;
@@ -570,7 +518,6 @@ body {
           });
           */
          $(".mail_check_input").on("input", function() {
-
             var inputCode = $(".mail_check_input").val(); // 입력코드    
             var checkResult = $("#mail_check_input_box_warn"); // 비교 결과   
             if (inputCode == code) { // 일치할 경우
@@ -581,14 +528,11 @@ body {
                checkResult.html("인증번호를 다시 눈닦고 확인해주세요.");
                $(".emailCheck.regex").css("color", "red");
             }
-
          });
-
          $("#signupbtn")
                .on(
                      "click",
                      function() {
-
                         var user_id = $("#id").val();
                         var pw = $("#pw").val();
                         var repw = $("#repw").val();
@@ -601,32 +545,27 @@ body {
                         var div2 = $(".email.regex").text();
                         var divEmailCheck = $(".emailCheck.regex")
                               .text();
-
                         var idregex = /^[a-z][a-z\d]{3,18}$/;
                         var pwregex = /(?=.*\d)(?=.*[a-zA-ZS]).{8,}/;
                         var nameregex = /[가-힣]{2,}/;
                         var phoneregex = /^01\d\d{3,4}\d{4}$/;
                         var emailregex = /.+@[a-z]+(\.[a-z]+){1,2}$/;
-
                         var idregex = idregex.exec(user_id);
                         if (user_id == "") {
                            $("#errorMsg").show();
                            $("#errorMsg").html("아이디가 비어있읍니다");
                            return;
                         }
-
                         if (idregex == null) {
                            $("#errorMsg").show();
                            $("#errorMsg").html("아이디의 양식을 다시확인하십쇼");
                            return;
                         }
-
                         if (div != "사용가능") {
                            $("#errorMsg").show();
                            $("#errorMsg").html("아이디를 다시 확인 해주십쇼");
                            return;
                         } else if (div == "사용가능") {
-
                            var pwregex = pwregex.exec(pw);
                            if (pw == "") {
                               $("#errorMsg").show();
@@ -667,15 +606,14 @@ body {
                               
                               
                               
-                              var phoneregex = phoneregex.exec ;
-
+                              var phoneregex = phoneregex.exec(phone) ;
                               if (phoneregex == null) {
                                  $("#errorMsg").show();
                                  $("#errorMsg")
                                        .html(
                                              "핸드폰번호양식을 다시 확인해주시겠읍니까? (Ex:01011112222)");
                                  return;
-                              }
+                              }else if(phoneregex!= null){
                               var emailregex = emailregex.exec(email);
                               if (emailregex == null
                                     || div2 != "사용가능") {
@@ -685,7 +623,6 @@ body {
                                              "이메일양식을 다시 확인하입시다 ex:Ex:Moonjaein@northkorea.com");
                                  return;
                               } else if (div2 == "사용가능") {
-
                                  
                                if (divEmailCheck == "") {
                                     $("#errorMsg").show();
@@ -704,9 +641,8 @@ body {
                                  }
                                  //빈칸 없을 때 제출.
                               }
-                              }
+                              }}
                            }}
-
                      })
       </script>
 
