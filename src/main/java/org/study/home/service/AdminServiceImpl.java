@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.study.home.mapper.AdminMapper;
 import org.study.home.model.AttachImageDTO;
 import org.study.home.model.Criteria;
+import org.study.home.model.OrderDTO;
 import org.study.home.model.ShipDTO;
 
 @Service
@@ -116,5 +117,17 @@ public class AdminServiceImpl implements AdminService{
 			System.out.println("getAttachInfo........");
 			
 			return adminMapper.getAttachInfo(shipId);
+		}
+		
+		/* 주문 상품 리스트 */
+		@Override
+		public List<OrderDTO> getOrderList(Criteria cri) {
+			return adminMapper.getOrderList(cri);
+		}
+		
+		/* 주문 총 갯수 */
+		@Override
+		public int getOrderTotal(Criteria cri) {
+			return adminMapper.getOrderTotal(cri);
 		}
 }

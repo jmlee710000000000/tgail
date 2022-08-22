@@ -27,7 +27,7 @@ public class SampleController {
     
     @PostMapping("/kakaoPay")
     public String kakaoPay(HttpServletRequest req) throws Exception  {
-        log.info("kakaoPay post............................................");
+
         System.out.println("8888888888888888:"+ req.getParameter("total_amount"));
         
         return "redirect:" + kakaopay.kakaoPayReady(req);
@@ -36,10 +36,9 @@ public class SampleController {
     
     @GetMapping("/kakaoPaySuccess")
     public void kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model) {
-        log.info("kakaoPaySuccess get............................................");
-        log.info("kakaoPaySuccess pg_token : " + pg_token);
-        model.addAttribute("info", kakaopay.kakaoPayInfo(pg_token));
 
+        model.addAttribute("info", kakaopay.kakaoPayInfo(pg_token));
+        
     }
     
 }

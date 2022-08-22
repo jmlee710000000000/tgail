@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.study.home.model.AttachImageDTO;
 import org.study.home.model.Criteria;
+import org.study.home.model.OrderDTO;
 import org.study.home.model.ShipDTO;
 
 public interface AdminMapper {
@@ -31,4 +32,10 @@ public interface AdminMapper {
 			
 			/* 지정 상품 이미지 정보 얻기 */
 			public List<AttachImageDTO> getAttachInfo(int shipId);	
+			
+			/* 주문 상품 리스트 */
+			public List<OrderDTO> getOrderList(Criteria cri);	
+			
+			/* 주문 총 갯수 */
+			public int getOrderTotal(Criteria cri);
 }

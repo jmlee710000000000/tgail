@@ -38,7 +38,20 @@
 				<span class="frame-btn__line frame-btn__line--tall"></span> 
 				<span class="frame-btn__line frame-btn__line--flat"></span>
 				<span class="frame-btn__solid"></span> <span class="frame-btn__text">로그아웃</span>
-				</a>				
+				</a>	
+				
+				
+		
+  			                          
+								<a class="frame-btn" href="/orderList">
+				<span class="frame-btn__outline frame-btn__outline--tall"></span> 
+				<span class="frame-btn__line frame-btn__line--tall"></span> 
+				<span class="frame-btn__line frame-btn__line--flat"></span>
+				<span class="frame-btn__outline frame-btn__outline--flat"></span>
+				<span class="frame-btn__line frame-btn__line--tall"></span> 
+				<span class="frame-btn__line frame-btn__line--flat"></span>
+				<span class="frame-btn__solid"></span> <span class="frame-btn__text">주문현황</span>
+				</a>	
 			</c:if>
 				
 			<c:if test="${empty member.user_id}">

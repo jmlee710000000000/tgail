@@ -70,7 +70,7 @@ public class KakaoPay {
 		try {
 			kakaoPayReadyVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/ready"), body, KakaoPayReadyDTO.class);
 			System.out.println("---------------------3"+ kakaoPayReadyVO);
-			log.info("" + kakaoPayReadyVO);
+	
 
 			return kakaoPayReadyVO.getNext_redirect_pc_url();
 
@@ -89,8 +89,6 @@ public class KakaoPay {
 	@SuppressWarnings("deprecation")
 	public KakaoPayApprovalDTO kakaoPayInfo(String pg_token) {
 
-		log.info("KakaoPayInfoVO............................................");
-		log.info("-----------------------------");
 		System.out.println("---------------------KakaoPayApprovalDTO333333");
 
 		RestTemplate restTemplate = new RestTemplate();
@@ -117,7 +115,7 @@ public class KakaoPay {
 		try {
 			kakaoPayApprovalVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/approve"), body,
 					KakaoPayApprovalDTO.class);
-			log.info("" + kakaoPayApprovalVO);
+
 
 			return kakaoPayApprovalVO;
 

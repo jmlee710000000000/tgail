@@ -94,4 +94,28 @@
 		select * from ship_image where shipId = #{shipId}
 	
 	</select>
+	
+		<!-- 주문 리스트 -->
+	<select id="getOrderList" resultType="org.study.home.model.OrderDTO">	
+			
+			select orderId, memberId, orderstate, orderdate
+		    from ship_order 
+		    <if test="keyword != null">
+		    	where memberId like concat('%',#{keyword}, '%')
+		    </if>
+		    order by orderdate desc
+		    limit #{skip}, #{amount}
+		    
+	</select>	
+	
+	<!-- 상품 총 개수 -->
+	<select id="getOrderTotal" resultType="int">
+	
+		select count(*) from ship_order
+		
+	    <if test="keyword != null">
+	    	where memberId like concat('%',#{keyword}, '%')
+	    </if>
+	
+	</select>
   </mapper>

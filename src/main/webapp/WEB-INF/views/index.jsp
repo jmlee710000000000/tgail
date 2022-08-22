@@ -12,7 +12,7 @@
 
 <body>
 	<%@include file="header.jsp"%>
-
+	
 	<video class="mainVideo"
 		src="../../resources/css/nebula_-_25168 (Original).mp4" muted autoplay
 		loop></video>

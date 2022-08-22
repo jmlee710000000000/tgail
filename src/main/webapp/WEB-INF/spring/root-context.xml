@@ -18,7 +18,7 @@
        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
       <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/spaceDB?useSSL=false"></property> 
       <property name="username" value="root"></property>
-      <property name="password" value="rootroot"></property>
+      <property name="password" value="a2791183"></property>
    </bean>   
    
    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
