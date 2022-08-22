@@ -28,7 +28,7 @@ public class SampleController {
     @PostMapping("/kakaoPay")
     public String kakaoPay(HttpServletRequest req) throws Exception  {
         log.info("kakaoPay post............................................");
-        System.out.println("8888888888888888:"+ req);
+        System.out.println("8888888888888888:"+ req.getParameter("total_amount"));
         
         return "redirect:" + kakaopay.kakaoPayReady(req);
  

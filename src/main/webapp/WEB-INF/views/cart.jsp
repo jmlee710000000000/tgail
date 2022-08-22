@@ -332,11 +332,11 @@ $(".cart_info_td").each(function(index, element){
 });
 /* 배송비 결정 */
 if(totalPrice >= 30000){
-	deliveryPrice = 10000;
+	deliveryPrice = 500;
 } else if(totalPrice == 0){
 	deliveryPrice = 0;
 } else {
-	deliveryPrice = 50000;	
+	deliveryPrice = 500;	
 }	
 
 /* 최종 가격 */

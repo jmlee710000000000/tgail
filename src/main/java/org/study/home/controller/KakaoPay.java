@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,6 +18,7 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.study.home.model.KakaoPayApprovalDTO;
 import org.study.home.model.KakaoPayReadyDTO;
+import org.study.home.service.OrderService;
 
 import lombok.extern.java.Log;
 
@@ -28,11 +30,13 @@ public class KakaoPay {
 
 	private KakaoPayReadyDTO kakaoPayReadyVO;
 	private KakaoPayApprovalDTO kakaoPayApprovalVO;
+	
+	@Autowired
+	private OrderService orderService;
 
 	@SuppressWarnings("deprecation")
 	public String kakaoPayReady(HttpServletRequest req) throws Exception  {
 
-		
         System.out.println("99999999999999999999999999:"+ req.getParameter("total_amount"));
 		RestTemplate restTemplate = new RestTemplate();
 

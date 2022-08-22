@@ -190,21 +190,10 @@
 						</div>
 						<!-- 버튼 영역 -->
 						<div class="total_info_btn_div">
-							<!-- <button class="order_btn">결제하기</button> -->
+							<button class="order_btn">결제하기</button> 
 						</div>
 
-						 
-						<form method="post" action="/kakaoPay">
-						    <button class="order_btn">카카오페이</button>
-						    <input type=hidden name="total_amount" value="2000">
-						    <input type=hidden name="tax_free_amount" value="200">
-						    <input type=hidden name="partner_order_id" value="1002">
-						    <input type=hidden name="partner_user_id" value="admin">
-						    <input type=hidden name="item_name" value="타이탄외 1건">
-						    <input type=hidden name="quantity" value="1">
-					    
-						</form>
- 
+
 					</div>
 
 
@@ -362,7 +351,7 @@
 			} else if (totalPrice == 0) {
 				deliveryPrice = 0;
 			} else {
-				deliveryPrice = 50000;
+				deliveryPrice = 500;
 			}
 
 			finalTotalPrice = totalPrice + deliveryPrice;
@@ -378,7 +367,14 @@
 			$(".delivery_price_span").text(deliveryPrice.toLocaleString());
 			// 최종 가격(총 가격 + 배송비)
 			$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString());
-
+			
+			$(".total_amount").val(finalTotalPrice);
+			$(".tax_free_amount").val("300");
+			$(".partner_order_id").val("0001");
+			$(".partner_user_id").val("admin");
+			$(".item_name").val("장남감 ");
+			$(".quantity").val(finalTotalPrice);
+			
 		}
 		
 
@@ -396,22 +392,25 @@
 				}
 			});	
 	
+
 			
-		/* 상품정보 */
-		let form_contents = ''; 
-		$(".goods_table_price_td").each(function(index, element){
-			let shipId = $(element).find(".individual_shipId_input").val();
-			let shipCount = $(element).find(".individual_shipCount_input").val();
-			let shipId_input = "<input name='orders[" + index + "].shipId' type='hidden' value='" + shipId + "'>";
-			form_contents += shipId_input;
-			let shipCount_input = "<input name='orders[" + index + "].shipCount' type='hidden' value='" + shipCount + "'>";
-			form_contents += shipCount_input;
-		});	
-		$(".order_form").append(form_contents);	
-		
-		/* 서버 전송 */
-		$(".order_form").submit();	
+			/* 상품정보 */
+			let form_contents = ''; 
+			$(".goods_table_price_td").each(function(index, element){
+				let shipId = $(element).find(".individual_shipId_input").val();
+				let shipCount = $(element).find(".individual_shipCount_input").val();
+				let shipId_input = "<input name='orders[" + index + "].shipId' type='hidden' value='" + shipId + "'>";
+				form_contents += shipId_input;
+				let shipCount_input = "<input name='orders[" + index + "].shipCount' type='hidden' value='" + shipCount + "'>";
+				form_contents += shipCount_input;
+			});	
 			
+
+			$(".order_form").append(form_contents);	
+			
+			/* 서버 전송 */
+			$(".order_form").submit();	
+				
 		});
 	</script>
 </body>
