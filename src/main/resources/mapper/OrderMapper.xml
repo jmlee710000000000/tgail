@@ -42,6 +42,25 @@
 	
 	</update>
 	
+<!-- 주문취소 -->
+	<update id="orderCancle">
+		update ship_order set orderState = '주문취소' where orderId = #{orderId}
+	</update>	
 
+	<!-- 주문 상품 정보(주문취소) -->
+	<select id="getOrderItemInfo" resultType="org.study.home.model.OrderItemDTO">
+	
+		select * from ship_orderItem
+		where orderId = #{orderId}
+	
+	</select>
+	
+	<!-- 주문 정보(주문 취소) -->
+	<select id="getOrder" resultType="org.study.home.model.OrderDTO">
+	
+		select * from ship_order
+		where orderId = #{orderId}
+	
+	</select>
 	
   </mapper>

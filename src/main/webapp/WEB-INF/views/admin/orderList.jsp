@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 </style>
-
+<link rel="stylesheet" href="/resources/css/orderList.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
@@ -49,13 +49,16 @@
 	                    			<td><fmt:formatDate value="${list.orderDate}" pattern="yyyy-MM-dd"/></td>
 	                    			<td><c:out value="${list.orderState}"/></td>
 	                    			<td>
-	                    			</td>
+	                    			<c:if test="${list.orderState == '배송준비' }">
+	                    			<button id="delete_btn" data-orderid="${list.orderId}">취소</button>
+	                    			</c:if></td>
 	                    		</tr>
 	                    		</c:forEach>
 	                    	</table> 					
 						</c:if>
 						
                 		<!-- 게시물 x -->
+                		
                 		<c:if test="${listCheck == 'empty'}">
                 			<div class="table_empty">
                 				등록된 작가가 없습니다.
@@ -113,7 +116,15 @@
 						<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 						<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
 					</form>  
-
+					
+					 <form id="deleteForm" action="/orderCancle" method="post">
+                    	<input type="hidden" name="orderId">
+						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+						<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+						<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
+						<input type="hidden" name="user_id" value="${member.user_id}">
+                    </form>
+					<a href="/">메인메뉴로 돌아가기</a>
 	<script>
 	let searchForm = $('#searchForm');
 	let moveForm = $('#moveForm');
@@ -146,6 +157,16 @@
 		
 		moveForm.submit();
 		
+	});
+	
+	$("#delete_btn").on("click", function(e){
+		
+		e.preventDefault();
+		
+		let id = $(this).data("orderid");
+		
+		$("#deleteForm").find("input[name='orderId']").val(id);
+		$("#deleteForm").submit();
 	});
 	</script>
 </body>

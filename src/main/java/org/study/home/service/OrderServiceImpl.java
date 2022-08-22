@@ -16,6 +16,7 @@ import org.study.home.mapper.ShipMapper;
 import org.study.home.model.AttachImageDTO;
 import org.study.home.model.CartDTO;
 import org.study.home.model.MemberDTO;
+import org.study.home.model.OrderCancelDTO;
 import org.study.home.model.OrderDTO;
 import org.study.home.model.OrderItemDTO;
 import org.study.home.model.OrderPageItemDTO;
@@ -110,6 +111,40 @@ public class OrderServiceImpl implements OrderService{
 			
 			cartMapper.deleteOrderCart(dto);
 		}
+		
+	}
+	
+	/* 주문취소 */
+	@Override
+	@Transactional
+	public void orderCancle(OrderCancelDTO dto) {
+		/* 주문, 주문상품 객체 */
+		/*회원*/
+			MemberDTO member = memberMapper.getMemberInfo(dto.getMemberId());
+		/*주문상품*/
+			List<OrderItemDTO> ords = orderMapper.getOrderItemInfo(dto.getOrderId());
+			for(OrderItemDTO ord : ords) {
+				
+			}
+		/* 주문 */
+			OrderDTO orw = orderMapper.getOrder(dto.getOrderId());
+			orw.setOrders(ords);
+			
+			orw.getOrderPriceInfo();
+			
+	/* 주문상품 취소 DB */
+			orderMapper.orderCancle(dto.getOrderId());
+			
+	/* 돈, 포인트, 재고 변환 */
+
+			
+				
+			/* 재고 */
+			for(OrderItemDTO ord : orw.getOrders()) {
+				ShipDTO ship = shipMapper.getGoodsInfo(ord.getShipId());
+				ship.setShipStock(ship.getShipStock() + ord.getShipCount());
+				orderMapper.deductStock(ship);
+			}
 		
 	}
 	

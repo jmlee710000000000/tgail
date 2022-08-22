@@ -51,7 +51,7 @@
 				<span class="frame-btn__line frame-btn__line--tall"></span> 
 				<span class="frame-btn__line frame-btn__line--flat"></span>
 				<span class="frame-btn__solid"></span> <span class="frame-btn__text">주문현황</span>
-				</a>	
+				</a>
 			</c:if>
 				
 			<c:if test="${empty member.user_id}">

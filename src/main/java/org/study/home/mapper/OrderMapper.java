@@ -1,6 +1,9 @@
 package org.study.home.mapper;
 
+import java.util.List;
+
 import org.study.home.model.CartDTO;
+import org.study.home.model.MemberDTO;
 import org.study.home.model.OrderDTO;
 import org.study.home.model.OrderItemDTO;
 import org.study.home.model.OrderPageItemDTO;
@@ -23,4 +26,18 @@ public interface OrderMapper {
 
 	/* 카트 제거(주문) */
 	public int deleteOrderCart(CartDTO dto);
+	
+	/* 주문 취소 */
+	public int orderCancle(String orderId);
+	
+	/* 주문 상품 정보(주문취소) */
+	public List<OrderItemDTO> getOrderItemInfo(String orderId);
+	
+	/* 주문 정보(주문취소) */
+	public OrderDTO getOrder(String orderId);
+
+
+
+
+
 }

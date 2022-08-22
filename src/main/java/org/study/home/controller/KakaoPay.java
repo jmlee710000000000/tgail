@@ -87,7 +87,8 @@ public class KakaoPay {
 	}
 
 	@SuppressWarnings("deprecation")
-	public KakaoPayApprovalDTO kakaoPayInfo(String pg_token) {
+	public
+	KakaoPayApprovalDTO kakaoPayInfo(String pg_token) {
 
 		System.out.println("---------------------KakaoPayApprovalDTO333333");
 
@@ -129,5 +130,5 @@ public class KakaoPay {
 
 		return null;
 	}
-
+	
 }

@@ -41,11 +41,13 @@ import org.study.home.mapper.MemberMapper;
 import org.study.home.model.AttachImageDTO;
 import org.study.home.model.Criteria;
 import org.study.home.model.MemberDTO;
+import org.study.home.model.OrderCancelDTO;
 import org.study.home.model.OrderDTO;
 import org.study.home.model.PageDTO;
 import org.study.home.model.ShipDTO;
 import org.study.home.service.AdminService;
 import org.study.home.service.MemberService;
+import org.study.home.service.OrderService;
 import org.study.home.service.ShipService;
 
 import net.coobird.thumbnailator.Thumbnails;
@@ -67,7 +69,9 @@ public class AdminController {
 	
 	@Autowired
 	private ShipService shipService;
-
+	
+	@Autowired
+	private OrderService orderService;
 	@GetMapping("/adminMenu/adminMember")
 	public String adminMember(Model model) {
 
@@ -411,5 +415,13 @@ public class AdminController {
 		return "/admin/orderList";
 	}
 	
-
+	/* 주문삭제 */
+	@PostMapping("/orderCancle")
+	public String orderCanclePOST(OrderCancelDTO dto) {
+		
+		orderService.orderCancle(dto);
+		
+		return "redirect:/orderList";
+	}	
+	
 }
